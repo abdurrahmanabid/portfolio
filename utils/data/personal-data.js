@@ -6,7 +6,7 @@ export const personalData = {
 
 If you're looking for someone who is not only skilled but also driven by problem-solving and innovation, then I'm ready to bring your next project to success!`,
   email: "abdurrahmanabid33@gmail.com",
-  phone: "+8801787765129",
+  phone: "+8801613362862",
   address: "Aghrabadh, Chattogram, Banglasesh",
   github: "https://github.com/abdurrahmanabid",
   facebook: "https://www.facebook.com/ab.rahman.meme/",
