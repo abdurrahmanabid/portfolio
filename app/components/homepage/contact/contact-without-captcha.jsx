@@ -20,78 +20,75 @@ function ContactWithoutCaptcha() {
     }
   };
 
-const handleSendMail = async (e) => {
-  e.preventDefault();
+  const handleSendMail = async (e) => {
+    e.preventDefault();
 
-  // Validate form fields
-  if (!userInput.email || !userInput.message || !userInput.name) {
-    setError({ ...error, required: true });
-    return;
-  } else if (error.email) {
-    return;
-  } else {
-    setError({ ...error, required: false });
-  }
+    // Validate form fields
+    if (!userInput.email || !userInput.message || !userInput.name) {
+      setError({ ...error, required: true });
+      return;
+    } else if (error.email) {
+      return;
+    } else {
+      setError({ ...error, required: false });
+    }
 
-  const serviceID = "service_6g9fdae";
-  const templateID = "template_5ityyke";
-  const publicKey = "zJ_o8Q3He505jfMfw";
+    const serviceID = "service_6g9fdae";
+    const templateID = "template_5ityyke";
+    const publicKey = "zJ_o8Q3He505jfMfw";
 
-  // Prepare parameters to match the placeholders in the template
-  const templateParams = {
-    from_name: userInput.name, // This will replace {{from_name}}
-    message: userInput.message, // This will replace {{message}}
-    email: userInput.email, // You can add additional fields if needed
-  };
+    // Prepare parameters to match the placeholders in the template
+    const templateParams = {
+      from_name: userInput.name, // This will replace {{from_name}}
+      message: userInput.message, // This will replace {{message}}
+      email: userInput.email, // You can add additional fields if needed
+    };
 
-  // Show loading toast
-  const toastId = toast.loading("Please wait...");
+    // Show loading toast
+    const toastId = toast.loading("Please wait...");
 
-  try {
-    // Send email via EmailJS
-    const res = await emailjs.send(
-      serviceID,
-      templateID,
-      templateParams,
-      publicKey
-    );
+    try {
+      // Send email via EmailJS
+      const res = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
 
-    // Send data to backend API (optional)
-    const teleRes = await axios.post(
-      `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
-      userInput
-    );
+      // Send data to backend API (optional)
+      const teleRes = await axios.post(
+        `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
+        userInput
+      );
 
-    // If both EmailJS and API calls are successful
-    if (res.status === 200 && teleRes.status === 200) {
-      // Update the loading toast to success
+      // If both EmailJS and API calls are successful
+      if (res.status === 200 && teleRes.status === 200) {
+        // Update the loading toast to success
+        toast.update(toastId, {
+          render: "Message sent successfully!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
+
+        // Reset form fields
+        setUserInput({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      // If there is an error, update the loading toast to error
       toast.update(toastId, {
-        render: "Message sent successfully!",
+        render: error.response?.data?.message || "Message sent successfully!",
         type: "success",
         isLoading: false,
         autoClose: 3000,
       });
-
-      // Reset form fields
-      setUserInput({
-        name: "",
-        email: "",
-        message: "",
-      });
     }
-  } catch (error) {
-    // If there is an error, update the loading toast to error
-    toast.update(toastId, {
-      render: error.response?.data?.message || "Message sent successfully!",
-      type: "success",
-      isLoading: false,
-      autoClose: 3000,
-    });
-  }
-};
-
-
-
+  };
 
   return (
     <div className="">
