@@ -1,10 +1,10 @@
 // @flow strict
-
-import Link from 'next/link';
-import * as React from 'react';
+"use client";
+import Link from "next/link";
+import * as React from "react";
 
 function ProjectCard({ project }) {
-
+  const [isHovered, setIsHovered] = React.useState(false);
   return (
     <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
       <div className="flex flex-row">
@@ -27,7 +27,7 @@ function ProjectCard({ project }) {
             <span className="mr-2 text-pink-500">const</span>
             <span className="mr-2 text-white">project</span>
             <span className="mr-2 text-pink-500">=</span>
-            <span className="text-gray-400">{'{'}</span>
+            <span className="text-gray-400">{"{"}</span>
           </div>
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
@@ -39,17 +39,14 @@ function ProjectCard({ project }) {
           <div className="ml-4 lg:ml-8 mr-2">
             <span className=" text-white">tools:</span>
             <span className="text-gray-400">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">{tag}</span>
-                  {
-                    project.tools.length - 1 !== i &&
-                    <span className="text-gray-400">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
+            {project.tools.map((tag, i) => (
+              <React.Fragment key={i}>
+                <span className="text-amber-300">{tag}</span>
+                {project.tools.length - 1 !== i && (
+                  <span className="text-gray-400">{`', '`}</span>
+                )}
+              </React.Fragment>
+            ))}
             <span className="text-gray-400">{"],"}</span>
           </div>
           <div>
@@ -59,19 +56,50 @@ function ProjectCard({ project }) {
           </div>
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">gitHubLink:</span>
-            <Link href={project.git} className="text-orange-400">{project.git}</Link>
+            <Link href={project.git} className="text-orange-400">
+              {project.git}
+            </Link>
             <span className="text-gray-400">,</span>
           </div>
+          {project.demo && (
+            <div
+              className="relative inline-block"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <span className="ml-4 lg:ml-8 mr-2 text-white">demo:</span>
+              <Link href={project.demo} className="text-orange-400">
+                {project.demo}
+              </Link>
+              <span className="text-gray-400">,</span>
+
+              {/* Image Preview Tooltip */}
+              {isHovered && project.image && (
+                <div
+                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 p-2 rounded-lg shadow-lg"
+                  style={{ backgroundColor: "#0d1224" }}
+                >
+                  <img
+                    src={project.image}
+                    alt="Preview"
+                    className="w-48 h-48 object-cover rounded-lg"
+                  />
+                </div>
+              )}
+            </div>
+          )}
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
+            <span className="text-cyan-400">{" " + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>
-          <div><span className="text-gray-400">{`};`}</span></div>
+          <div>
+            <span className="text-gray-400">{`};`}</span>
+          </div>
         </code>
       </div>
     </div>
   );
-};
+}
 
 export default ProjectCard;

@@ -6,8 +6,8 @@ export const projectsData = [
       "HomeyMeals is a platform where housewives sell their extra homemade food to students near schools, colleges, and universities. Built using the MERN stack with MySQL, this project focuses on streamlining the process of food ordering and delivery while enabling housewives to generate income. The system includes features such as authentication, role-based access control (Admin, Seller, Student, Rider), and order management with real-time updates. As a Full Stack Developer, I contributed to both front-end and back-end development, optimizing the user experience and ensuring efficient system performance.",
     tools: ["React", "Node.js", "Express", "MongoDB", "JavaScript"],
     code: "https://github.com/abdurrahmanabid/homeymeals",
-    demo: "",
-    image: "",
+    demo: "https://github.com/abdurrahmanabid/homeymeals",
+    image: "https://placehold.co/600x400",
     role: "Full Stack Developer",
     git: "https://github.com/abdurrahmanabid/homeymeals",
   },
@@ -19,7 +19,7 @@ export const projectsData = [
     tools: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
     code: "https://github.com/abdurrahmanabid/game-project--database-",
     demo: "",
-    image: "", // Add an image if available
+    image: "https://placehold.co/600x600",
     role: "Full Stack Developer",
     git: "https://github.com/abdurrahmanabid/game-project--database-",
   },
@@ -39,6 +39,30 @@ export const projectsData = [
   {
     id: 4,
     name: "Social Media App",
+    description:
+      "As part of my university course, I developed a social media application using PHP, MySQL, and JavaScript. The project involved creating a dynamic platform where users could register, log in, post updates, like, comment, and interact with other users. It included secure authentication, user profiles, and real-time post updates. The back-end logic was built with PHP and MySQL, while the front-end interactions were handled using JavaScript.",
+    tools: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+    code: "https://github.com/abdurrahmanabid/foftware-engineering-project-social-media-app",
+    demo: "",
+    image: "https://placehold.co/600x400", // Add an image if available
+    role: "Full Stack Developer",
+    git: "https://github.com/abdurrahmanabid/foftware-engineering-project-social-media-app",
+  },
+  {
+    id: 5,
+    name: "Social Media App",
+    description:
+      "As part of my university course, I developed a social media application using PHP, MySQL, and JavaScript. The project involved creating a dynamic platform where users could register, log in, post updates, like, comment, and interact with other users. It included secure authentication, user profiles, and real-time post updates. The back-end logic was built with PHP and MySQL, while the front-end interactions were handled using JavaScript.",
+    tools: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+    code: "https://github.com/abdurrahmanabid/foftware-engineering-project-social-media-app",
+    demo: "",
+    image: "", // Add an image if available
+    role: "Full Stack Developer",
+    git: "https://github.com/abdurrahmanabid/foftware-engineering-project-social-media-app",
+  },
+  {
+    id: 6,
+    name: "Social Media dhjdApp",
     description:
       "As part of my university course, I developed a social media application using PHP, MySQL, and JavaScript. The project involved creating a dynamic platform where users could register, log in, post updates, like, comment, and interact with other users. It included secure authentication, user profiles, and real-time post updates. The back-end logic was built with PHP and MySQL, while the front-end interactions were handled using JavaScript.",
     tools: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
