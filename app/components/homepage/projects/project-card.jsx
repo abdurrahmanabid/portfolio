@@ -56,7 +56,7 @@ function ProjectCard({ project }) {
           </div>
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">gitHubLink:</span>
-            <Link href={project.git} className="text-orange-400">
+            <Link href={project.git} target="_blank" className="text-orange-400">
               {project.git}
             </Link>
             <span className="text-gray-400">,</span>
@@ -67,8 +67,8 @@ function ProjectCard({ project }) {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <span className="ml-4 lg:ml-8 mr-2 text-white">demo:</span>
-              <Link href={project.demo} className="text-orange-400">
+              <span className="ml-4 lg:ml-8 mr-2 text-white">liveDemo:</span>
+              <Link href={project.demo} target="_blank" className="text-orange-400 hover:underline hover:italic">
                 {project.demo}
               </Link>
               <span className="text-gray-400">,</span>
@@ -82,7 +82,7 @@ function ProjectCard({ project }) {
                   <img
                     src={project.image}
                     alt="Preview"
-                    className="w-48 h-48 object-cover rounded-lg"
+                    className="h-48 w-auto object-cover rounded-lg"
                   />
                 </div>
               )}
