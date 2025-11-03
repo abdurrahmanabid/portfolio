@@ -1,6 +1,5 @@
 // @flow strict
 import { personalData } from "@/utils/data/personal-data";
-import { Metadata } from "next";
 
 async function getBlog(slug) {
   const res = await fetch(`https://dev.to/api/articles/${personalData.devUsername}/${slug}`)

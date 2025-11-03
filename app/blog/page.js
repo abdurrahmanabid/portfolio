@@ -2,9 +2,8 @@
 
 import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Blogs",
   description: "Explore articles and blog posts by Abdur Rahman Abid on web development, MERN stack, AI projects, and software engineering.",
   keywords: [
