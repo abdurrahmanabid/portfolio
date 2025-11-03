@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://abdurrahmanabid.vercel.app
-
-# Sitemaps
-Sitemap: https://abdurrahmanabid.vercel.app/sitemap.xml
