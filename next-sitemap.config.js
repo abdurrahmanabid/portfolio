@@ -1,6 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://abdurrahmanabid.vercel.app',
+  siteUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://abdurrahmanabid.vercel.app',
   generateRobotsTxt: true,
-  sitemapSize: 7000,
+  sitemapSize: 5000,
+  changefreq: 'weekly',
+  priority: 0.7
 };
