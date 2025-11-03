@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://abdurrahmanabid.vercel.app';
+  const baseUrl = 'https://abdurrahmanabid.vercel.app';
 
   const routes = [
     {
