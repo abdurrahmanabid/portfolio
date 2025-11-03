@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://abdurrahmanabid.vercel.app/</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://abdurrahmanabid.vercel.app/#experience</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://abdurrahmanabid.vercel.app/#projects</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://abdurrahmanabid.vercel.app/#education</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://abdurrahmanabid.vercel.app/#contact</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url>
+</urlset>
