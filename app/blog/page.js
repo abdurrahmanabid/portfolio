@@ -2,6 +2,26 @@
 
 import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blogs",
+  description: "Explore articles and blog posts by Abdur Rahman Abid on web development, MERN stack, AI projects, and software engineering.",
+  keywords: [
+    "Abdur Rahman Abid Blog",
+    "Web Development Blog",
+    "MERN Stack Articles",
+    "Developer Blog",
+    "Programming Articles",
+    "Software Engineering Blog",
+    "Tech Blog Bangladesh"
+  ],
+  openGraph: {
+    title: "Blogs | Abdur Rahman Abid",
+    description: "Explore articles and blog posts by Abdur Rahman Abid on web development, MERN stack, AI projects, and software engineering.",
+    type: "website",
+  },
+};
 
 async function getBlogs() {
   const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
